@@ -1,0 +1,15 @@
+<!DOCTYPE>
+{% extends "base.html"%}
+{% block content%}
+<div id="head1">
+	<h2>{{article.headline}}</h2>
+	<span>作者:{{siteinfo.username}}</span>&nbsp&nbsp&nbsp
+	<span>发布日期:{{article.pub_date}}</span>
+</div>
+</br>
+<div id="pub_content">
+<p>
+	{{article.content}}
+</p>
+</div>
+{% endblock%}

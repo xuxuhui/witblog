@@ -1,0 +1,22 @@
+<!--继承base.html-->
+{% extends "base.html" %}
+<!--重写content模块-->
+{% block contents %}
+<div class="articleslist">
+	<ul>
+		<li>
+			<h1> {{article.headline}}</h1>
+			<p>
+			<!--autoescape标签可以直接显示html的标签，removetags可以移除html标签格式, truncatechars_html对字符串进行html格式的安全分割-->
+			<!--相关信息查询django官方templates tags-->
+			{% autoescape %}
+				{{article.counter|removetags:"div br a span img p" | truncatechars_html:150}}
+			{% endautoescape %}
+			</p>
+			<span>发布时间:12.14</span>
+			<span>所属项目:django<span>
+			<span>标签:love</span>
+		</li>
+	</ul>
+</div>
+{% endblock %}

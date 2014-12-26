@@ -1,0 +1,41 @@
+<!DOCTYPE>
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<div id="head">
+	<h2>文章发表栏</h2>
+<div>
+<div class="publish">
+	<form action="/blog/publishSubmit/" method="get">
+		<div class="publish_items">
+			<span>标题:</span>
+			<div class="headline"><textarea name="head_line" id="article_head"></textarea>
+			{% if error %}
+				{% for head in error %}
+					{% if 'head_line' in head %}
+						<p style="color:red">{{head.head_line}}</p>
+					{% endif %}
+				{% endfor %}
+			{% endif %}
+			</div>
+		</div>
+				<br/>
+		<div class="publish_items">
+			<span>文章内容:</span>
+			<div class="cont"><textarea name="article" id="article_content"></textarea>
+			{% if error %}
+				{% for cont in error %}
+					{% if cont.content %}
+						<p style="color:red">{{cont.content}}</p>
+					{% endif %}
+				{% endfor %}
+			{% endif %}
+			</div>
+		</div>
+				</br>
+		<div class="sumbit_tools">
+			<input type="submit" value="提交"/>
+		</div>
+	</form>
+</div>
+{% endblock %}
