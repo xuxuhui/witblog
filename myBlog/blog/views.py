@@ -2,7 +2,7 @@
 
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
-from blog.models import Articles, SiteConf
+from blog.models import Articles, SiteConf, Topics
 
 # Create your views here.
 def index(request):
@@ -16,8 +16,9 @@ def aboutme(request):
 	return render(request, 'aboutme.html', {'siteinfo':siteinfo})
 
 def topic(request):
+	topics = Topics.objects.all()
 
-	return render(request, 'aboutme.html', {})
+	return render(request, 'topic.html', {'topics':topics})
 
 def like(request):
 
@@ -36,8 +37,10 @@ def article(request, article_id):
 def label(request, article_label):
 	return render(request, 'articlelabel.html', {})
 
-def topic(request, article_topic):
-	return render(request, 'topic.html', {})
+def topicsArticles(request, topic_id):
+	article = Articles.objects.all().filter(topics_id=topic_id)
+	
+	return render(request, 'topicArticles.html', {"articles":article})
 
 def likeit(reequest, article_id):
 	likecount = 0

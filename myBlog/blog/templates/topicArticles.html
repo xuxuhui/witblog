@@ -1,5 +1,26 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block content %}
-	<div id>
+{% for article in articles %}
+	<h3><a style="color:black"href="{% url 'blog:article' article.id %}">{{article.headline}}</a></h3>
+	{{article.content|safe|truncatechars:150}}
+	<br>
+	<span>发布时间:{{article.pub_date|date:"Y-m-d"}}</span>&nbsp&nbsp&nbsp&nbsp&nbsp
+	<span>所属专题:<a href="{% url 'blog:topic' article.topics%}">{{article.topics}}</a></span>&nbsp&nbsp&nbsp&nbsp&nbsp
+	<span>标签:<a href="{% url 'blog:label' article.label %}">{{article.label}}</a></span>&nbsp&nbsp&nbsp&nbsp&nbsp
+	<span class="likeit" data-article_id="{{article.id}}" style="cursor:pointer">喜爱:{{article.like}}&nbsp&nbsp&nbsp&nbsp&nbsp<img src="{% static 'img/like.png' %}"></span>
+	<p style="border-bottom:gray solid 1px"></p>
+{% endfor %}
+
+<div class="cool">
+<pre>
+	Hello everyone:
+		This is Damon's blog
+		Welecome everyone to visit it!
+
+	Q:世界上投资最少, 甚至每天睡觉都有上千万收入的有那种?
+			R:网络游戏便是可以!
+							----丁三石						
+</pre>
+</div>
 {% endblock %}
