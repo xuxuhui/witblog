@@ -1,0 +1,14 @@
+{% extends "base.html"%}
+{% block content %}
+<h2>About Me</h2>
+<p style="border-bottom:gray solid 1px"></p>
+<h3>Author:Damon</h3>
+<hr>
+<img src="{{siteinfo.user_image.url}}">
+<h4>Homepage:....</h4>
+<h4>Email:&nbsp&nbsp&nbspxuhui.xu@maxwit.com</h4>
+<h4>Code Source:<a href="https://github.com/xuxuhui"><span id="codeSource">githut.com/xuxuhui/myblog.git</span></a></h4>
+<h4>Interest:</h4>
+<p>&nbsp&nbsp&nbsp&nbspI'm interest in playing computergames(like 梦幻), also I like playing table tennis ...etc. I want to study more computer technology. Love django, love life.{{siteinfo.user_signature}}.</p>
+
+{% endblock %}
