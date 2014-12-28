@@ -6,24 +6,46 @@
 	<script type="text/javascript" src="{% static "js/jquery.js" %}"></script>
 	<script type="text/javascript" src="{% static "js/my.js" %}"></script>
 	<link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}">
-	<title>damon blog</title>
+	<title>Damon's blog</title>
 </head>
 
 <body>
-	<!--左边的div，一直浮动在页面的左侧,页面的滚动同时保持其位置不变-->
-		<!--菜单-->
-	<div class=left>
-		<ul id="menu">
-			<li><a href="{% url 'blog:index' %}">首页</a></li>
-			<li><a href="{% url 'blog:topics' %}">专题</a></li>
-			<li><a href="{% url 'blog:likest' %}">喜欢</a></li>
-			<li><a href="{% url 'blog:publish' %}">发表</a></li>
-		</ul>
+<div id="main">
+	<div id="top">
+		<span id="homepage"><a href="{% url 'blog:index' %}">主页</a></span>
+		<span id="author"><a href="{% url 'blog:aboutme' %}">关于作者</a></span>
 	</div>
-	<img src="{% static "img/moth.jpg" %}"/ id="moth"> 
-	<div class="picshow">
-		{% block picshow %}<img src="{% static "img/damon.jpeg" %}"/>  {% endblock %}
+
+	<div id="left">
+		<p><a href="{% url 'blog:topic' %}">所有专题</a></p>
+		<p><a href="{% url 'blog:like' %}">按喜爱量</a></p>
+		<p><a href="{% url 'blog:reply' %}">按回复量</a></p>
 	</div>
-	{% block content %}{% endblock %}
+
+
+	<div id="right">
+		<p>最新发布</p>
+		<p>最新发布a</p>
+		<p>最新发布aa</p>
+		<p>最新发布aa</p>
+		<p>最新发布</p>
+		<p>最新发布</p>
+		<p>最新发布</p>
+		<p>最新发布</p>
+		</br>
+		<p>全部文档</p>
+		<p>最新发布a</p>
+		<p>最新发布aa</p>
+		<p>最新发布aa</p>
+		<p>最新发布</p>
+		<p>最新发布</p>
+		<p>最新发布</p>
+		<p>最新发布</p>
+	</div>
+</div>
+<div id="center">
+	{% block content %}
+	{% endblock %}
+</div>
 </body>
 </html>

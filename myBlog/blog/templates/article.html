@@ -2,14 +2,15 @@
 {% extends "base.html"%}
 {% block content%}
 <div id="head1">
-	<h2>{{article.headline}}</h2>
+	<h3>{{article.headline}}</h3>
+	<span><img style="width:50;height:50" src="{{siteinfo.user_image.url}}"></span>
 	<span>作者:{{siteinfo.username}}</span>&nbsp&nbsp&nbsp
-	<span>发布日期:{{article.pub_date}}</span>
+	<span>发布日期:{{article.pub_date|date:"Y年m月d日"}}</span>
 </div>
 </br>
 <div id="pub_content">
 <p>
-	{{article.content}}
+	{{article.content|safe}}
 </p>
 </div>
 {% endblock%}

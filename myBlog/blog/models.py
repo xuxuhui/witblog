@@ -9,9 +9,8 @@ import datetime
 class Topics(models.Model):
 	#中文为数据库旁注，没有时会直接实现字段名:
 	name = models.CharField('专题名称', max_length=40)
-	discription = models.CharField('描述',max_length=200)
+	description = models.CharField('描述',max_length=200)
 	image = models.ImageField('展示图片', upload_to='uploadImages')
-	discretion_image = models.ImageField('专题图表', upload_to='uploadImages')
 
 	#返回一个字段为数据库检索
 	def __unicode__(self):
@@ -27,12 +26,11 @@ class Topics(models.Model):
 class Articles(models.Model):
 		headline = models.CharField('标题', max_length=100)
 		content = models.CharField('内容', max_length=5000)
-		pub_date = models.DateField('发布时间', default=timezone.now)
-		image = models.ImageField('图片', upload_to="uploadImages")
-		label = models.CharField('标签',default='默认标签',max_length=200)
+		pub_date = models.DateField('发布时间', default=timezone.now().now())
+		label = models.CharField('标签',max_length=200)
 		like = models.IntegerField('喜欢', default=0)
-		topics = models.ForeignKey(Topics, verbose_name='所属专题')
 		discuss = models.IntegerField('评论条数', default=0)
+		topics = models.ForeignKey(Topics, verbose_name='所属专题')
 	
 		def __unicode__(self):
 			return self.headline
