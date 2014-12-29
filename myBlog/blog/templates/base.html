@@ -12,6 +12,7 @@
 <body onload="showCool()">
 <div id="main">
 	<div id="top">
+		<span><img src="{% static "img/home.png" %}"></span>
 		<span id="homepage"><a href="{% url 'blog:index' %}">主页</a></span>
 		<span id="author"><a href="{% url 'blog:aboutme' %}">关于作者</a></span>
 	</div>
@@ -26,16 +27,16 @@
 	<div id="right">
 		<h4>最新文章</h4>
 		{% for article in new.new%}
-		<p style="font-size:10"><a href="{% url 'blog:article' article.id%}">{{article.headline}}</a></p>
+		<p style="font-size:10"><a href="{% url 'blog:article' article.id%}"><span class="fa-star-o"></span>&nbsp {{article.headline}}</a></p>
 		{% endfor %}
 		</br>
 		<h4>全部文档</h4>
-		<p style="font-size:15;">敏捷开发共{{new.mjkf}}篇</p>
-		<p style="font-size:15;">Web前端共&nbsp{{new.web}}篇</p>
-		<p style="font-size:15;">生活发现共{{new.shfx}}篇</p>
-		<p style="font-size:15;">算法研究共{{new.sfyj}}篇</p>
-		<p style="font-size:15;">Python共&nbsp&nbsp{{new.python}}篇</p>
-		<p style="font-size:15;">django共&nbsp&nbsp{{new.django}}篇</p>
+		<p style="font-size:15;"><span class="fa-folder-o"></span>敏捷开发共{{new.mjkf}}篇</p>
+		<p style="font-size:15;"><span class="fa-folder-o">Web前端共&nbsp{{new.web}}篇</p>
+		<p style="font-size:15;"><span class="fa-folder-o">生活发现共{{new.shfx}}篇</p>
+		<p style="font-size:15;"><span class="fa-folder-o">算法研究共{{new.sfyj}}篇</p>
+		<p style="font-size:15;"><span class="fa-folder-o">Python共&nbsp&nbsp{{new.python}}篇</p>
+		<p style="font-size:15;"><span class="fa-folder-o">django共&nbsp&nbsp{{new.django}}篇</p>
 </div>
 <div id="center">
 	{% block content %}

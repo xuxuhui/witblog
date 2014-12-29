@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.1.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #top {
 	width:1260px;
 	height:30px;
@@ -7,14 +15,23 @@
 	border-bottom:gray solid 1px;
 }
 
-#homepage {
-	margin-left:30%;
+#top span img {
+	margin-left:300px;
+	width:30px;
+	height:30px;
 	float:left;
 }
+
+#homepage {
+	float:left;
+	font-size:25px;
+}
+
 
 #author {
 	float:right;
 	margin-right:30%;
+	font-size:25px;
 }
 
 #left {
@@ -74,6 +91,14 @@
 	color:black;
 }
 
+#headline a {
+ 	color:#00008b
+}
+
+#headline a:hover{
+ 	color:#87cefa;
+}
+
 .cool {
 	width:100%;
 	height:100%;
@@ -89,15 +114,51 @@
 .cool pre{
 	margin:100px 20px 0 300px;
 }
-
-.step-links {
-	margin-top:10px;
-	margin-bottom:10px;
+div.pagination{
+    width: 600px;
+    padding: 10px 10px 20px 10px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 5px;
 }
 
+
+.step-links a{
+    display: block;
+    font-size: 13px;
+    border: 1px solid #DDD;
+    padding: 8px 10px 8px 10px;
+    font-weight: normal;
+    /*background-color: #2099AB;*/
+    color: #21759b;
+    border-radius: 1px;
+    text-decoration: none;
+    display: inline; /* do not show the dot of list */
+}
+
+.deactive{
+    color: #999999;
+    border-radius: 5px;
+    font-size: 12px;
+    border: 1px solid #DDD;
+    padding: 8px 10px 8px 10px;
+    font-weight: normal;
+    background-color: #FFFFFF;
+    border-radius: 1px;
+    text-decoration: none;
+}
+
+
 body {
-	font-family : 微软雅黑,宋体, 'New York';
+	font-family :"Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sa     ns-serif; 微软雅黑,宋体, 'New York';
 }
 a {
 	text-decoration:none;
+}
+
+.fa-star-o:before {
+  content:"\f006";
+}
+.fa-folder-o:before {
+  content:"\f07c";
 }
