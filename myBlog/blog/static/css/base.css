@@ -27,7 +27,7 @@
 
 #left p a{
 	color:gray;
-	font-size:20px;
+	font-size:18px;
 	padding-top:20px;
 }
 
@@ -81,7 +81,7 @@
 	font-size:20px;
 	color:white;
 	font-weight:bold;
-	background-color:white;
+	background-color:black;
 	display:none;
 	position:absolute;
 }
@@ -90,6 +90,14 @@
 	margin:100px 20px 0 300px;
 }
 
+.step-links {
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+body {
+	font-family : 微软雅黑,宋体, 'New York';
+}
 a {
 	text-decoration:none;
 }

@@ -9,7 +9,7 @@
 	<title>Damon's blog</title>
 </head>
 
-<body>
+<body onload="showCool()">
 <div id="main">
 	<div id="top">
 		<span id="homepage"><a href="{% url 'blog:index' %}">主页</a></span>
@@ -24,28 +24,34 @@
 
 
 	<div id="right">
-		<p>最新发布</p>
-		<p>最新发布a</p>
-		<p>最新发布aa</p>
-		<p>最新发布aa</p>
-		<p>最新发布</p>
-		<p>最新发布</p>
-		<p>最新发布</p>
-		<p>最新发布</p>
+		<h4>最新文章</h4>
+		{% for article in new.new%}
+		<p style="font-size:10"><a href="{% url 'blog:article' article.id%}">{{article.headline}}</a></p>
+		{% endfor %}
 		</br>
-		<p>全部文档</p>
-		<p>最新发布a</p>
-		<p>最新发布aa</p>
-		<p>最新发布aa</p>
-		<p>最新发布</p>
-		<p>最新发布</p>
-		<p>最新发布</p>
-		<p>最新发布</p>
-	</div>
+		<h4>全部文档</h4>
+		<p style="font-size:15;">敏捷开发共{{new.mjkf}}篇</p>
+		<p style="font-size:15;">Web前端共&nbsp{{new.web}}篇</p>
+		<p style="font-size:15;">生活发现共{{new.shfx}}篇</p>
+		<p style="font-size:15;">算法研究共{{new.sfyj}}篇</p>
+		<p style="font-size:15;">Python共&nbsp&nbsp{{new.python}}篇</p>
+		<p style="font-size:15;">django共&nbsp&nbsp{{new.django}}篇</p>
 </div>
 <div id="center">
 	{% block content %}
 	{% endblock %}
+</div>
+</div>
+<div class="cool">
+<pre>
+	Hello everyone:
+		This is Damon's blog
+		Welecome everyone to visit it!
+
+	Q:世界上投资最少, 甚至每天睡觉都有上千万收入的有那种?
+			R:网络游戏便是可以!
+							----丁三石
+</pre>
 </div>
 </body>
 </html>

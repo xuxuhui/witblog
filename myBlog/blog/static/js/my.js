@@ -21,7 +21,7 @@ var cool = new function() {
 }
 
 function showCool(){
-	if (window.location.pathname == '/') {
+	if (window.location.pathname == '/' && window.location.search == "") {
 		$("#main").hide();	
 		$(".cool").css({'display':'block'});
 		cool.str = $("pre").text();

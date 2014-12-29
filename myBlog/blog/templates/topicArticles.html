@@ -6,7 +6,7 @@
 	{{article.content|safe|truncatechars:150}}
 	<br>
 	<span>发布时间:{{article.pub_date|date:"Y-m-d"}}</span>&nbsp&nbsp&nbsp&nbsp&nbsp
-	<span>所属专题:<a href="{% url 'blog:topic' article.topics%}">{{article.topics}}</a></span>&nbsp&nbsp&nbsp&nbsp&nbsp
+	<span>所属专题:<a href="{% url 'blog:subjects' article.topics_id %}">{{article.topics}}</a></span>&nbsp&nbsp&nbsp&nbsp&nbsp
 	<span>标签:<a href="{% url 'blog:label' article.label %}">{{article.label}}</a></span>&nbsp&nbsp&nbsp&nbsp&nbsp
 	<span class="likeit" data-article_id="{{article.id}}" style="cursor:pointer">喜爱:{{article.like}}&nbsp&nbsp&nbsp&nbsp&nbsp<img src="{% static 'img/like.png' %}"></span>
 	<p style="border-bottom:gray solid 1px"></p>

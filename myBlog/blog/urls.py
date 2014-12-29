@@ -18,5 +18,8 @@ urlpatterns = patterns('',
 	url(r'^reply/$', 'blog.views.reply', name='reply'),
 	url(r'^article/(?P<article_id>\d+)/$', 'blog.views.article', name='article'),
 	url(r'^articlelabel/(?P<article_label>\w+)/$', 'blog.views.label', name='label'),
-	url(r'^topic/(?P<article_label>\w+)/$', 'blog.views.topic', name='topic'),
+	url(r'^topics/(?P<topic_id>\d+)/$', 'blog.views.topics', name='topiclabel'),
+
+	url(r'^subjects/(?P<subjects_id>\d+)/$', 'blog.views.subjects', name='subjects'),
+	url(r'^page/', 'blog.views.listing'),
 )
